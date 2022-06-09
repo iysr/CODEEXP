@@ -4,8 +4,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons'; 
-import HomeScreen from './pages/home';
-import UserScreen from './pages/user';
+import HomeScreen from './pages/home.js';
+import UserScreen from './pages/user.js';
+import GuideScreen from './pages/guide.js';
+import ForumScreen from './pages/forum.js';
+import SchScreen from './pages/schedule.js';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,6 +24,12 @@ export default function App() {
               iconName = 'home';
             } else if (route.name === 'You') {
               iconName = 'user';
+            } else if (route.name==='Guides'){
+              iconName = 'book-open'
+            } else if(route.name==='Forum'){
+              iconName = 'layers'
+            } else if(route.name==='Schedule'){
+              iconName = 'calendar'
             }
 
             // You can return any component that you like here!
@@ -30,7 +39,10 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
         })}
       >
+        <Tab.Screen name="Guides" component={GuideScreen} />
+        <Tab.Screen name="Schedule" component={SchScreen} />
         <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Forum" component={ForumScreen} />
         <Tab.Screen name="You" component={UserScreen} />
       </Tab.Navigator>
     </NavigationContainer>
