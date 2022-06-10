@@ -39,11 +39,11 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Guides" component={GuideScreen} />
-        <Tab.Screen name="Schedule" component={SchScreen} />
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Forum" component={ForumScreen} />
-        <Tab.Screen name="You" component={UserScreen} />
+        <Tab.Screen name="Guides" component={GuideScreen} style={styles.inter}/>
+        <Tab.Screen name="Schedule" component={SchScreen} style={styles.inter}/>
+        <Tab.Screen name="Home" component={HomeScreen} style={styles.inter}/>
+        <Tab.Screen name="Forum" component={ForumScreen} style={styles.inter}/>
+        <Tab.Screen name="You" component={UserScreen} style={styles.inter}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -54,5 +54,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  inter: {
+    fontFamily: 'Inter',
   },
 });
