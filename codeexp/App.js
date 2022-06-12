@@ -39,11 +39,11 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Guides" component={GuideScreen} style={styles.inter}/>
-        <Tab.Screen name="Schedule" component={SchScreen} style={styles.inter}/>
-        <Tab.Screen name="Home" component={HomeScreen} style={styles.inter}/>
-        <Tab.Screen name="Forum" component={ForumScreen} style={styles.inter}/>
-        <Tab.Screen name="You" component={UserScreen} style={styles.inter}/>
+        <Tab.Screen name="Guides" component={GuideScreen} style={styles.inter} options={{headerShown:false}}/>
+        <Tab.Screen name="Schedule" component={SchScreen} style={styles.inter} options={{headerShown:false}}/>
+        <Tab.Screen name="Home" component={HomeScreen} style={styles.inter} options={{headerShown:false}}/>
+        <Tab.Screen name="Forum" component={ForumScreen} style={styles.inter} options={{headerShown:false}}/>
+        <Tab.Screen name="You" component={UserScreen} style={styles.inter} options={{headerShown:false}}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
