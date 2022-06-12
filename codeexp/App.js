@@ -37,7 +37,7 @@ export default function App() {
           },
           tabBarActiveTintColor: 'green',
           tabBarInactiveTintColor: 'gray',
-        })}
+        })} initialRouteName='Home'
       >
         <Tab.Screen name="Guides" component={GuideScreen} style={styles.inter} options={{headerShown:false}}/>
         <Tab.Screen name="Schedule" component={SchScreen} style={styles.inter} options={{headerShown:false}}/>
