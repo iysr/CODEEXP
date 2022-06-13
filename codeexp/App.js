@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons'; 
@@ -11,10 +11,12 @@ import ForumScreen from './pages/forum.js';
 import SchScreen from './pages/schedule.js';
 
 const Tab = createBottomTabNavigator();
+let width = Dimensions.get('window').width;
+let height = Dimensions.get('window').height;
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer cardStyle={{flex:1}}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
@@ -55,7 +57,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  inter: {
+  screen: {
     fontFamily: 'Inter',
+    width: width,
+    height: height,
+    overflow: 'scroll',
   },
 });

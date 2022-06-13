@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
 import { Header } from './components/header'
 
 let width = Dimensions.get('window').width;
@@ -7,10 +7,10 @@ let height = Dimensions.get('window').height;
 
 export default function UserScreen() {
     return (
-      <View>
+      <ScrollView>
         <Header content='Carlos Lee Ye Zhou'></Header>
         <Text>You.</Text>
-      </View>
+      </ScrollView>
     );
 }
 const styles=StyleSheet.create({
