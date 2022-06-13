@@ -25,8 +25,8 @@ const articles = [
 const ArticleScreen = ({ route }) => {
   const {title, author, article} = route.params;
 
-  return (<View>
-    <Text>{title}</Text>
+  return (<View style={styles.articleView}>
+    <Text style={styles.title}>{title}</Text>
     <Text>By: {author}</Text>
     <Text>{article}</Text>
   </View>)
@@ -34,9 +34,9 @@ const ArticleScreen = ({ route }) => {
 
 const Article = (props) => {
   return (
-    <View>
-      {/* help me style this thanks */}
-      <Text>{`${props.title} by ${props.author}`}</Text>
+    <View style={styles.articleRow}>
+      <Text style={styles.articleTitle}>{props.title}</Text>
+      <Text style={styles.articleAuthor}>By: {props.author}</Text>
     </View>
   )
 }
@@ -60,7 +60,7 @@ function GuideScreen({ navigation }) {
 
     return (
       <ScrollView>
-        <Header content='2 New Guides'></Header>
+        <Header content={`${articles.length} New Guides`}></Header>
         <Text>Guides!</Text>
         <FlatList 
           data={articles}
@@ -81,3 +81,29 @@ export default function GuideStack() {
     </Stack.Navigator>
   )
 }
+
+const styles = StyleSheet.create({
+  articleView: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  title: {
+    fontSize: 30
+  },
+  articleRow: {
+    width: "100%",
+    borderColor: "black",
+    borderWidth: 1,
+    alignItems: "center",
+    flexDirection: "row"
+  },
+  articleTitle: {
+    fontSize: 20,
+    flex: 1,
+    alignSelf: "left"
+  },
+  articleAuthor: {
+    flex: 1,
+    alignSelf: "right"
+  }
+})
