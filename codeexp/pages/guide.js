@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, ScrollView, FlatList, Dimensions, TouchableOpacity } from 'react-native';
-import { Header } from './components/header'
+import 'react-native-gesture-handler';
+import { Header } from './components/header';
+import { Activity } from './components/activity';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -25,19 +27,16 @@ const articles = [
 const ArticleScreen = ({ route }) => {
   const {title, author, article} = route.params;
 
-  return (<View>
-    <Text>{title}</Text>
-    <Text>By: {author}</Text>
-    <Text>{article}</Text>
+  return (<View style={{marginLeft:20,marginRight:20,marginTop:20}}>
+    <Text style={{fontSize:30,borderBottomColor:'#000',borderStyle:'solid',borderBottomWidth:2}}>{title}</Text>
+    <Text style={{fontSize:20,marginTop:5,marginBottom:20}}>By: {author}</Text>
+    <Text style={{fontSize:15}}>{article}</Text>
   </View>)
 }
 
 const Article = (props) => {
   return (
-    <View>
-      {/* help me style this thanks */}
-      <Text>{`${props.title} by ${props.author}`}</Text>
-    </View>
+    <Activity image={props.bg} name={props.title} location={props.author}></Activity>
   )
 }
 
@@ -61,7 +60,6 @@ function GuideScreen({ navigation }) {
     return (
       <ScrollView>
         <Header content='2 New Guides'></Header>
-        <Text>Guides!</Text>
         <FlatList 
           data={articles}
           renderItem={renderArticle}
@@ -77,7 +75,7 @@ export default function GuideStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="GuideScreen" component={GuideScreen} options={{headerShown: false}}/>
-      <Stack.Screen name="ArticleScreen" component={ArticleScreen} options={({ route }) => ({ title: route.params.title })}/>
+      <Stack.Screen name="ArticleScreen" component={ArticleScreen} options={({ route }) => ({ title: 'Article' })}/>
     </Stack.Navigator>
   )
 }
