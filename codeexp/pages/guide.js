@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, Text, View, FlatList, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Dimensions, ScrollView } from 'react-native';
 import { Header } from './components/header'
 
 const Article = (props) => {
@@ -11,7 +11,7 @@ let height = Dimensions.get('window').height;
 
 export default function UserScreen() {
     return (
-      <View>
+      <ScrollView>
         <Header content='2 New Guides'></Header>
         <Text>Guides!</Text>
         <FlatList 
@@ -33,6 +33,6 @@ export default function UserScreen() {
             ({ item }) => <Article title={item.title} author={item.author}></Article>
           }
         />
-      </View>
+      </ScrollView>
     );
 }
