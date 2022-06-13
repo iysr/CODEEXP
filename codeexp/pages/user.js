@@ -1,14 +1,30 @@
 import * as React from 'react'
 import { StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
 import { Header } from './components/header'
+import { db } from "./components/database.js"
+import { doc, getDoc } from "./components/firebase-firestore.js";
+
 
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
 
+const user_token = "kbeavzZIM62lT7MjnqXA";
+let data = "Hello World";
+
+const docRef = doc(db, "User", user_token);
+const docSnap = await getDoc(docRef);
+
+if (docSnap.exists()) {
+  data = docSnap.data()
+} else {
+  data = "Failed"
+}
+
+
 export default function UserScreen() {
     return (
       <ScrollView>
-        <Header content='Carlos Lee Ye Zhou'></Header>
+        <Header content={data}></Header>
         <Text>You.</Text>
       </ScrollView>
     );
