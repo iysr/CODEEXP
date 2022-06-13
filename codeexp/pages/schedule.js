@@ -1,10 +1,15 @@
 import * as React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { Header } from './components/header'
 
-export default function SchScreen() {
+let width = Dimensions.get('window').width;
+let height = Dimensions.get('window').height;
+
+export default function UserScreen() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Schedule!</Text>
+      <View>
+        <Header content='3 Upcoming Activities'></Header>
+        <Text>Schedule</Text>
       </View>
     );
-  }
+}
