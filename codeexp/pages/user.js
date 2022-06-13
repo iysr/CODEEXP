@@ -11,15 +11,19 @@ let height = Dimensions.get('window').height;
 const user_token = "kbeavzZIM62lT7MjnqXA";
 let data = "Hello World";
 
-const docRef = doc(db, "User", user_token);
-const docSnap = await getDoc(docRef);
-
-if (docSnap.exists()) {
-  data = docSnap.data()
-} else {
-  data = "Failed"
+async function getUser() {
+  const docRef = doc(db, "User", user_token);
+  const docSnap = await getDoc(docRef);
+  return docSnap;
 }
 
+let docSnap = "test"
+
+getUser()
+  .then(data => {
+    docSnap = data;
+    console.log(docSnap)
+  });
 
 export default function UserScreen() {
     return (
