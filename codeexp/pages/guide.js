@@ -18,7 +18,7 @@ const articles = [
   {
     title: "5 common rifle errors",
     author: "Isaac",
-    article: "1: skill issue \n 2: skill issue \n 3: skill issue \n 4: skill issue \n 5: skill issue \n "
+    article: "1: skill issue \n2: skill issue \n3: skill issue \n4: skill issue \n5: skill issue"
   },
 ];
 
@@ -48,7 +48,11 @@ function GuideScreen({ navigation }) {
 
   const renderArticle = ({ item }) => {
     return (
-      <TouchableOpacity onPress={() => navigation.navigate("ArticleScreen", { ...item })}>
+      <TouchableOpacity onPress={
+        () => { 
+          navigation.navigate("ArticleScreen", { ...item })
+        }
+      }>
         <Article title={item.title} author={item.author} />
       </TouchableOpacity>
     )
@@ -73,7 +77,7 @@ export default function GuideStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="GuideScreen" component={GuideScreen} options={{headerShown: false}}/>
-      <Stack.Screen name="ArticleScreen" component={ArticleScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="ArticleScreen" component={ArticleScreen} options={({ route }) => ({ title: route.params.title })}/>
     </Stack.Navigator>
   )
 }
