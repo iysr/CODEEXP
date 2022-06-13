@@ -31,14 +31,6 @@ const articles = [
 ];
 
 const ArticleScreen = ({ route }) => {
-<<<<<<< HEAD
-  const {title, author, article} = route.params;
-
-  return (<View style={styles.articleView}>
-    <Text style={styles.title}>{title}</Text>
-    <Text>By: {author}</Text>
-    <Text>{article}</Text>
-=======
   const {title, author, article, image} = route.params;
   let img={uri:image}
   return (<View style={{marginLeft:20,marginRight:20,marginTop:20}}>
@@ -46,20 +38,12 @@ const ArticleScreen = ({ route }) => {
     <Text style={{fontSize:20,marginTop:5,marginBottom:20}}>By: {author}</Text>
     <Image source={img} resizeMode="cover" style={{width:width-40,borderRadius:25,height:200,marginBottom:20}}></Image>
     <Text style={{fontSize:15}}>{article}</Text>
->>>>>>> 784046b28099b74bb23e5b1697cb7ba05fce0fd7
   </View>)
 }
 
 const Article = (props) => {
   return (
-<<<<<<< HEAD
-    <View style={styles.articleRow}>
-      <Text style={styles.articleTitle}>{props.title}</Text>
-      <Text style={styles.articleAuthor}>By: {props.author}</Text>
-    </View>
-=======
     <Activity image={props.bg} name={props.title} location={props.author} txtclr={props.txtclr}></Activity>
->>>>>>> 784046b28099b74bb23e5b1697cb7ba05fce0fd7
   )
 }
 
@@ -82,12 +66,7 @@ function GuideScreen({ navigation }) {
 
     return (
       <ScrollView>
-<<<<<<< HEAD
-        <Header content={`${articles.length} New Guides`}></Header>
-        <Text>Guides!</Text>
-=======
         <Header content='3 New Guides'></Header>
->>>>>>> 784046b28099b74bb23e5b1697cb7ba05fce0fd7
         <FlatList 
           data={articles}
           renderItem={renderArticle}
