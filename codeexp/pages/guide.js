@@ -65,7 +65,7 @@ function GuideScreen({ navigation }) {
   }
 
     return (
-      <ScrollView>
+      <View>
         <Header content={`${articles.length} New Guides`}></Header>
         <Text>Guides!</Text>
         <FlatList 
@@ -73,7 +73,7 @@ function GuideScreen({ navigation }) {
           renderItem={renderArticle}
           keyExtractor={(item) => item.title}
         />
-      </ScrollView>
+      </View>
     );
 }
 
