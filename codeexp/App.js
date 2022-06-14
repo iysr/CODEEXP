@@ -39,8 +39,8 @@ export default function App() {
         })} initialRouteName='Home'
       >
         <Tab.Screen name="Home" component={HomeScreen} style={styles.inter} options={{ headerShown: false }} />
-        <Tab.Screen name="Guides" component={GuideStack} style={styles.inter} options={{headerShown:false}}/>
         <Tab.Screen name="Schedule" component={SchScreen} style={styles.inter} options={{headerShown:false}}/>
+        <Tab.Screen name="Guides" component={GuideStack} style={styles.inter} options={{headerShown:false}}/>
         <Tab.Screen name="You" component={UserScreen} style={styles.inter} options={{headerShown:false}}/>
       </Tab.Navigator>
     </NavigationContainer>
