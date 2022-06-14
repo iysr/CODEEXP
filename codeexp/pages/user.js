@@ -10,24 +10,24 @@ let height = Dimensions.get('window').height;
 
 const user_token = "qizZHwNVxGONf9PUvMmF";
 
-let data = "test123";
-
 async function getUser() {
   const docRef = doc(db, "User", user_token);
   const docSnap = await getDoc(docRef);
   return docSnap;
 };
 
+var data = "test123";
 getUser()
   .then(dat => {
-    data = dat;
-    console.log(data)
+    return dat
   });
+//data["_document"]["data"]["value"]["mapValue"]["fields"]["name"]["stringValue"]
+console.log(data)
 
 export default function UserScreen() {
     return (
       <ScrollView>
-        <Header content={ data }></Header>
+        <Header content={ toString(data) }></Header>
         <Text style={styles.textfield}>Rank: </Text>
         <Text style={styles.textfield}>Home Base: </Text>
         <Text style={styles.textfield}>Company: </Text>

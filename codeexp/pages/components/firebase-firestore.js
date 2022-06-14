@@ -1,4 +1,10 @@
 import { _registerComponent, registerVersion, _getProvider, getApp, _removeServiceInstance, SDK_VERSION } from './firebase-app.js';
+import {decode, encode} from './base64.js'
+
+if (!global.btoa) {  global.btoa = encode }
+
+if (!global.atob) { global.atob = decode }
+
 
 /**
  * @license
