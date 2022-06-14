@@ -3,13 +3,15 @@ import { StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
 import { Header } from './components/header'
 import { Activity } from './components/activity'
 import { H1 } from './components/textlevels'
+import { Flbutton } from './components/floatingbtn'
 
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
 
 export default function UserScreen() {
     return (
-      <ScrollView>
+      <ScrollView style={{position:'relative'}}>
+        <Flbutton></Flbutton>
         <Header content='3 Upcoming Activities'></Header>
         <H1 content="Today's Activities"></H1>
         <Activity image='https://c1.wallpaperflare.com/preview/21/2/561/asphalt-ground-fixed-asphalt-pavement.jpg' txtclr='#fff' name='Physical Training' location='Parade Square' time='8:00'></Activity>

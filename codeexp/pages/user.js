@@ -28,37 +28,19 @@ getUser()
 export default function UserScreen() {
     return (
       <ScrollView>
-        <Header content={data}></Header>
-        <Text>You.</Text>
+        <Header content={'Carlos Lee Ye Zhou'}></Header>
+        <Text style={styles.textfield}>Rank: </Text>
+        <Text style={styles.textfield}>Home Base: </Text>
+        <Text style={styles.textfield}>Company: </Text>
+        <Text style={styles.textfield}>Platoon: </Text>
+        <Text style={styles.textfield}>Date of Enlistment: </Text>
       </ScrollView>
     );
 }
 const styles=StyleSheet.create({
-    headerContainer:{
-      width: width,
-      height: 0.4*height,
-      position: 'relative',
-      marginBottom: 30,
-    },
-    header:{
-      width: width+10,
-      height: height*0.2,
-      backgroundColor: "#d4d4d4",
-      transform: [{skewY:'-15deg'},{translateY:height*0.15},{translateX:-25}],
-      zIndex: 1,
-      borderRadius: 25,
-    },
-    fill:{
-      width: width,
-      height: height*0.27,
-      backgroundColor: '#d4d4d4',
-      position: 'absolute',
-    },
-    headerText:{
-      zIndex: 2,
-      position: 'absolute',
-      top: height*0.18,
-      left: 20,
-      fontSize: 25,
-    }
-  })
+  textfield:{
+    marginLeft:20,
+    fontSize:20,
+    marginBottom: 20,
+  },
+})

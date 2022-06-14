@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, FlatList, Dimensions, TouchableOpac
 import 'react-native-gesture-handler';
 import { Header } from './components/header';
 import { Activity } from './components/activity';
+import { H1 } from './components/textlevels';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -67,12 +68,14 @@ function GuideScreen({ navigation }) {
     return (
       <View>
         <Header content={`${articles.length} New Guides`}></Header>
-        <Text>Guides!</Text>
+        <H1 content="New Guides"></H1>
         <FlatList 
           data={articles}
           renderItem={renderArticle}
           keyExtractor={(item) => item.title}
         />
+        <H1 content="Older"></H1>
+        <Text style={styles.longtext}>Nothing found...</Text>
       </View>
     );
 }
@@ -111,5 +114,8 @@ const styles = StyleSheet.create({
   articleAuthor: {
     flex: 1,
     alignSelf: "right"
+  },
+  longtext:{
+    marginLeft:20,
   }
 })
