@@ -28,8 +28,6 @@ export default function App() {
               iconName = 'user';
             } else if (route.name==='Guides'){
               iconName = 'book-open'
-            } else if(route.name==='Forum'){
-              iconName = 'layers'
             } else if(route.name==='Schedule'){
               iconName = 'calendar'
             }
@@ -44,7 +42,6 @@ export default function App() {
         <Tab.Screen name="Guides" component={GuideStack} style={styles.inter} options={{headerShown:false}}/>
         <Tab.Screen name="Schedule" component={SchScreen} style={styles.inter} options={{headerShown:false}}/>
         <Tab.Screen name="Home" component={HomeScreen} style={styles.inter} options={{headerShown:false}}/>
-        <Tab.Screen name="Forum" component={ForumScreen} style={styles.inter} options={{headerShown:false}}/>
         <Tab.Screen name="You" component={UserScreen} style={styles.inter} options={{headerShown:false}}/>
       </Tab.Navigator>
     </NavigationContainer>

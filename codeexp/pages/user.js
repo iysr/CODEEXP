@@ -22,8 +22,7 @@ export default function UserScreen() {
     .then(dat => {
       // return dat
       console.log(dat)
-      console.log(dat["_document"]["data"]["value"]["mapValue"]["fields"]["name"]["stringValue"])
-      setName(dat["_document"]["data"]["value"]["mapValue"]["fields"]["name"]["stringValue"])
+      setName(dat["_document"]["data"]["value"]["mapValue"]["fields"]["name"]["stringValue"]);
     });
     return (
       <ScrollView>
