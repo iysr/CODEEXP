@@ -5,6 +5,7 @@ import { Header } from './components/header';
 import { Activity } from './components/activity';
 import { H1 } from './components/textlevels';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Flbutton } from './components/floatingbtn';
 import { NavigationContainer } from "@react-navigation/native";
 
 const articles = [
@@ -34,12 +35,15 @@ const articles = [
 const ArticleScreen = ({ route }) => {
   const {title, author, article, image} = route.params;
   let img={uri:image}
-  return (<ScrollView style={{marginLeft:20,marginRight:20,marginTop:20}}>
-    <Text style={{fontSize:30,borderBottomColor:'#000',borderStyle:'solid',borderBottomWidth:2}}>{title}</Text>
-    <Text style={{fontSize:20,marginTop:5,marginBottom:20}}>By: {author}</Text>
-    <Image source={img} resizeMode="cover" style={{width:width-40,borderRadius:25,height:200,marginBottom:20}}></Image>
-    <Text style={{fontSize:15}}>{article}</Text>
-  </ScrollView>)
+  return (<View>
+    <ScrollView style={{marginLeft:20,marginRight:20,marginTop:20}}>
+      <Text style={{fontSize:30,borderBottomColor:'#000',borderStyle:'solid',borderBottomWidth:2}}>{title}</Text>
+      <Text style={{fontSize:20,marginTop:5,marginBottom:20}}>By: {author}</Text>
+      <Image source={img} resizeMode="cover" style={{width:width-40,borderRadius:25,height:200,marginBottom:20}}></Image>
+      <Text style={{fontSize:15}}>{article}</Text>
+    </ScrollView>
+    <Flbutton text="?" />
+    </View>)
 }
 
 const Article = (props) => {

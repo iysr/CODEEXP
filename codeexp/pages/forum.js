@@ -13,7 +13,7 @@ export default function ForumScreen() {
         <Header content='No new responses'></Header>
         <Text>Forum!</Text>
       </ScrollView>
-      <Flbutton></Flbutton>
+      <Flbutton text="+"></Flbutton>
       </View>
     );
   }
