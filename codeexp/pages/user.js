@@ -20,8 +20,6 @@ export default function UserScreen() {
   let [name, setName] = useState("");
   getUser()
     .then(dat => {
-      // return dat
-      console.log(dat)
       setName(dat["_document"]["data"]["value"]["mapValue"]["fields"]["name"]["stringValue"]);
     });
     return (

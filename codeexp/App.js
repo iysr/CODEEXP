@@ -7,7 +7,6 @@ import { Feather } from '@expo/vector-icons';
 import HomeScreen from './pages/home.js';
 import UserScreen from './pages/user.js';
 import GuideStack from './pages/guide.js';
-import ForumScreen from './pages/forum.js';
 import SchScreen from './pages/schedule.js';
 
 const Tab = createBottomTabNavigator();
@@ -39,9 +38,9 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
         })} initialRouteName='Home'
       >
+        <Tab.Screen name="Home" component={HomeScreen} style={styles.inter} options={{ headerShown: false }} />
         <Tab.Screen name="Guides" component={GuideStack} style={styles.inter} options={{headerShown:false}}/>
         <Tab.Screen name="Schedule" component={SchScreen} style={styles.inter} options={{headerShown:false}}/>
-        <Tab.Screen name="Home" component={HomeScreen} style={styles.inter} options={{headerShown:false}}/>
         <Tab.Screen name="You" component={UserScreen} style={styles.inter} options={{headerShown:false}}/>
       </Tab.Navigator>
     </NavigationContainer>

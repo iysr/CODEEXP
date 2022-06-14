@@ -35,7 +35,7 @@ const articles = [
 const ArticleScreen = ({ route }) => {
   const {title, author, article, image} = route.params;
   let img={uri:image}
-  return (<View>
+  return (<View style={{height:"100%"}}>
     <ScrollView style={{marginLeft:20,marginRight:20,marginTop:20}}>
       <Text style={{fontSize:30,borderBottomColor:'#000',borderStyle:'solid',borderBottomWidth:2}}>{title}</Text>
       <Text style={{fontSize:20,marginTop:5,marginBottom:20}}>By: {author}</Text>
@@ -70,7 +70,7 @@ function GuideScreen({ navigation }) {
   }
 
     return (
-      <View>
+      <ScrollView>
         <Header content={`${articles.length} New Guides`}></Header>
         <H1 content="New Guides"></H1>
         <FlatList 
@@ -80,7 +80,7 @@ function GuideScreen({ navigation }) {
         />
         <H1 content="Older"></H1>
         <Text style={styles.longtext}>Nothing found...</Text>
-      </View>
+      </ScrollView>
     );
 }
 

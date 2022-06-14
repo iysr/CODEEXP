@@ -23,7 +23,7 @@ export default function UserScreen() {
         <Activity image='https://wallpaperaccess.com/full/3813543.jpg' txtclr='#fff' name='Network Security' location='Computer Lab 2' time='15:00'></Activity>
         <View style={{height:100}}></View>
       </ScrollView>
-      <Flbutton></Flbutton>
+      <Flbutton text="+"></Flbutton>
       </View>
     );
 }
