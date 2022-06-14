@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from "react"; 
 import { StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
 import { Header } from './components/header'
 import { db } from "./components/database.js"
@@ -16,18 +16,18 @@ async function getUser() {
   return docSnap;
 };
 
-var data = "test123";
-getUser()
-  .then(dat => {
-    return dat
-  });
-//data["_document"]["data"]["value"]["mapValue"]["fields"]["name"]["stringValue"]
-console.log(data)
-
 export default function UserScreen() {
+  let [name, setName] = useState("");
+  getUser()
+    .then(dat => {
+      // return dat
+      console.log(dat)
+      console.log(dat["_document"]["data"]["value"]["mapValue"]["fields"]["name"]["stringValue"])
+      setName(dat["_document"]["data"]["value"]["mapValue"]["fields"]["name"]["stringValue"])
+    });
     return (
       <ScrollView>
-        <Header content={ toString(data) }></Header>
+        <Header content={name}></Header>
         <Text style={styles.textfield}>Rank: </Text>
         <Text style={styles.textfield}>Home Base: </Text>
         <Text style={styles.textfield}>Company: </Text>
